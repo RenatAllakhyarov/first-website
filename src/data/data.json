@@ -2,91 +2,91 @@
     {
       "id": 1,
       "name": "BMW",
-      "image": "/public/images/bmw.jpg"
+      "image": "/images/bmw.jpg"
     },
 
     {
       "id": 2,
       "name": "Mercedes",
-      "image" :"/public/images/mb.jpg"
+      "image" :"/images/mb.jpg"
     },
     
     {
       "id": 3,
       "name": "Audi",
-      "image":"/public/images/audi.jpg"
+      "image":"/images/audi.jpg"
     },
     
     {
       "id": 4,
       "name": "Toyota",
-      "image":"/public/images/Toyota.jpg"
+      "image":"/images/Toyota.jpg"
     },
     
     {
       "id": 5,
       "name": "Honda",
-      "image":"/public/images/honda.jpg"
+      "image":"/images/honda.jpg"
     },
     
     {
       "id": 6,
       "name": "Nissan",
-      "image" :"/public/images/nissan.jpg"
+      "image" :"/images/nissan.jpg"
     },
     
     {
       "id": 7,
       "name": "Volkswagen",
-      "image":"/public/images/vw.jpg"
+      "image":"/images/vw.jpg"
     },
     
     {
       "id": 8,
       "name": "Ford",
-      "image":"/public/images/ford.jpg"
+      "image":"/images/ford.jpg"
     },
     
     {
       "id": 9,
       "name": "Kia",
-      "image":"/public/images/kia.jpg"
+      "image":"/images/kia.jpg"
     },
     
     {
       "id": 10,
       "name": "Hyundai",
-      "image":"/public/images/hyundai.jpg"
+      "image":"/images/hyundai.jpg"
     },
     
     {
       "id": 11,
       "name": "Mazda",
-      "image":"/public/images/mazda.jpg"
+      "image":"/images/mazda.jpg"
     },
     
     {
       "id": 12,
       "name": "Subaru",
-      "image":"/public/images/subaru.jpg"
+      "image":"/images/subaru.jpg"
     },
     
     {
       "id": 13,
       "name": "Lexus",
-      "image":"/public/images/lexus.jpg"
+      "image":"/images/lexus.jpg"
     },
     
     {
       "id": 14,
       "name": "Jaguar",
-      "image":"/public/images/jaguar.jpg"
+      "image":"/images/jaguar.jpg"
     },
     
     {
       "id": 15,
       "name": "Land Rover",
-      "image":"/public/images/lr.jpg"
+      "image":"/images/lr.jpg"
     }
   ]
   
