@@ -1,0 +1,12 @@
+.list-item {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.list-item:hover {
+    background-color: lightgrey;
+}

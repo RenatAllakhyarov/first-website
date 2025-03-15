@@ -1,8 +1,7 @@
 import data from "data/data.json";
 import { useState } from "react";
 
-export interface Item {
-    // move somewhere else
+export interface Item{
     id: number;
     name: string;
     image: string;

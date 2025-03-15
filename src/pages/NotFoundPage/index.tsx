@@ -18,7 +18,6 @@ import { useState, type ChangeEvent, type ReactElement } from "react";
 // };
 
 const NotFoundPage = (): ReactElement => {
-    
     // const InputWrapper = () => {
     //     const [value, setValue] = useState<string>("1234");
 

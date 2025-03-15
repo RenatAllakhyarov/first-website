@@ -1,26 +1,13 @@
-import Header from "../Header";
-import routes from "../../router";
-// import MainContent from "../MainContent";
-import AppContext from "../../context/AppContext";
-import useAppContext from "../../hooks/useAppContext";
 import DefaultLayout from "../../layouts/DefaultLayout";
+import useAppContext from "../../hooks/useAppContext";
+import AppContext from "../../context/AppContext";
+import routes from "../../router";
 import {
     BrowserRouter,
     Route,
     type RouteObject,
     Routes,
 } from "react-router-dom";
-
-// const Application = () => {
-//     return (
-//         <AppProvider>
-//             <Header />
-//             <MainContent />
-//         </AppProvider>
-//     );
-// };
-
-// export default Application;
 
 const Application = () => {
     return (

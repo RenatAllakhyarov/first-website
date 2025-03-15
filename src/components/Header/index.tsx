@@ -1,5 +1,5 @@
-import React, { type ReactElement } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { type ReactElement } from "react";
 import { Routes } from "../../router";
 import "./style.css";
 

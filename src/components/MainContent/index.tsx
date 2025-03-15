@@ -1,25 +1,22 @@
-import { useState, useMemo, useContext } from "react";
-import "../MainContent/style.css";
-import  useAppContext  from "../../hooks/useAppContext"
-import { useNavigate } from "react-router-dom";
-import { Routes } from "@/router";
-
-interface Item {
-    id: number;
-    name: string;
-    image: string;
-}
+import useAppContext from "../../hooks//useAppContext";
+import Pagination from "../Pagination";
+import Searcher from "../Searcher";
+import { useNavigate, useLocation } from "react-router-dom";
+import { ReactElement, useMemo, useState } from "react";
+import { type Item } from "../../hooks//useAppContext";
+import { Routes } from "../../router";
 
 const itemsPerPage: number = 5;
-const MainContent = () => {
-    const AppContext = useAppContext();
-    const navigate = useNavigate();
-    const { selectedItem, setSelectedItem, data } = AppContext;
+
+const MainContent = (): ReactElement => {
+    const { selectedItem, setSelectedItem, data } = useAppContext();
     const [searchQuery, setSearchQuery] = useState<string>("");
+    const navigate = useNavigate();
+    const location = useLocation();
     const [currentPage, setCurrentPage] = useState<number>(1);
 
     const filteredData = useMemo(() => {
-        return data.filter((item : Item) =>
+        return data.filter((item: Item) =>
             item.name.toLowerCase().includes(searchQuery.toLowerCase())
         );
     }, [searchQuery, data]);
@@ -33,26 +30,26 @@ const MainContent = () => {
         navigate(-1);
     };
 
-    const handlePageChange = (pageNumber: number): void => {
-        setCurrentPage(pageNumber);
-    };
-
     const paginatedData = filteredData.slice(
         (currentPage - 1) * itemsPerPage,
         currentPage * itemsPerPage
     );
 
+    const pagesCount = Math.ceil(filteredData.length / itemsPerPage);
+
+    const handlePageChange = (page: number): void => {
+        setCurrentPage(page);
+    };
+
     return (
         <div className="main-content-container">
-            {window.location.pathname === "/" && (
+            {location.pathname === "/" && (
                 <div>
-                    <input
-                        type="text"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        placeholder="Search..."
-                        className="search-input"
+                    <Searcher
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
                     />
+
                     <ul className="list-container">
                         {paginatedData.map((item) => (
                             <li
@@ -64,27 +61,16 @@ const MainContent = () => {
                             </li>
                         ))}
                     </ul>
-                    <div className="pagination">
-                        {Array(Math.ceil(filteredData.length / itemsPerPage))
-                            .fill(null)
-                            .map((_, index) => (
-                                <button
-                                    key={index}
-                                    className={`page-button ${
-                                        currentPage === index + 1
-                                            ? "active"
-                                            : ""
-                                    }`}
-                                    onClick={() => handlePageChange(index + 1)}
-                                >
-                                    {index + 1}
-                                </button>
-                            ))}
-                    </div>
+
+                    <Pagination
+                        currentPage={currentPage}
+                        pagesCount={pagesCount}
+                        onPageChange={handlePageChange}
+                    />
                 </div>
             )}
 
-            {window.location.pathname === Routes.PREVIEW && selectedItem && (
+            {location.pathname === Routes.PREVIEW && selectedItem && (
                 <div className="preview-container">
                     <h2>{selectedItem.name}</h2>
                     <img
@@ -93,6 +79,7 @@ const MainContent = () => {
                         className="preview-image"
                     />
                     <button className="back-button" onClick={handleBackClick}>
+                        {" "}
                         Back
                     </button>
                 </div>

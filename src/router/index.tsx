@@ -1,6 +1,6 @@
-import ListPage from "../pages/ListPage";
-import PreviewPage from "../pages/PreviewPage";
 import NotFoundPage from "../pages/NotFoundPage";
+import PreviewPage from "../pages/PreviewPage";
+import ListPage from "../pages/ListPage";
 import { Navigate, type RouteObject } from "react-router-dom";
 
 export const enum Routes {

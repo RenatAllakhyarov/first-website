@@ -1,5 +1,5 @@
 import { type Item } from "../../hooks/useAppContext";
-import { createContext, useState } from "react";
+import { createContext } from "react";
 
 interface IAppContext {
     showList: boolean;
