@@ -1,11 +1,19 @@
-import AppContext from "../../context/AppContext";
-import { useContext, type ReactElement } from "react";
+import data from "../../data/data.json";
+import { type ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./style.css";
+import NotFoundPage from "../NotFoundPage";
 
 const PreviewPage = (): ReactElement => {
-    const { selectedItem } = useContext(AppContext);
+    const { id } = useParams();
     const navigate = useNavigate();
+
+    const [selectedItem] = data.filter((item) => item.id === +id!);
+
+    if (!selectedItem) {
+        return <NotFoundPage />;
+    }
 
     return (
         <div className="preview-page">
@@ -14,7 +22,7 @@ const PreviewPage = (): ReactElement => {
                     {selectedItem && (
                         <div className="preview-container">
                             <h2 className="preview-title">
-                                {selectedItem.name}
+                                {selectedItem?.name}
                             </h2>
                             <img
                                 className="preview-image"

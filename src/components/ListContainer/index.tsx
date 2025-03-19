@@ -1,21 +1,30 @@
 import ListItem from "../../components/ListItem";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 import { Item } from "../../hooks/useAppContext";
 import { ReactElement } from "react";
+import { Routes } from "../../router";
 import "./style.css";
 
 export interface IListContainerProps {
     paginatedData: Item[];
-    setSelectedItem: (item: Item | null) => void;
+    //setSelectedItem: (item: Item | null) => void;
 }
 
 const ListContainer = ({
     paginatedData,
-    setSelectedItem,
+    //setSelectedItem,
 }: IListContainerProps): ReactElement => {
+    const navigate = useNavigate();
+
     return (
         <ul className="list-container">
             {paginatedData.map((item) => (
-                <ListItem setSelectedItem={setSelectedItem} item={item} />
+                <ListItem
+                    name={item.name}
+                    onClick={() => {
+                        navigate(`/preview/${item.id}`);
+                    }}
+                />
             ))}
         </ul>
     );

@@ -4,7 +4,7 @@ import ListPage from "../pages/ListPage";
 import { Navigate, type RouteObject } from "react-router-dom";
 
 export const enum Routes {
-    PREVIEW = "/preview",
+    PREVIEW = "/preview/:id",
     LIST = "/list",
     HOME = "/",
     NOT_FOUND = "*",

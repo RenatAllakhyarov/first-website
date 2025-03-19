@@ -37,6 +37,8 @@ const ListPage = (): ReactElement => {
 
     const handlePageChange = (page: number): void => {
         setCurrentPage(page);
+
+    
     };
 
     return (
@@ -49,7 +51,6 @@ const ListPage = (): ReactElement => {
                     />
 
                     <ListContainer
-                        setSelectedItem={setSelectedItem}
                         paginatedData={paginatedData}
                     />
 
